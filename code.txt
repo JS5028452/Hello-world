@@ -1,0 +1,18 @@
+val movies = sc.textFile("file:///home/cloudera/Desktop/data/movies.dat")
+val rating = sc.textFile("file:///home/cloudera/Desktop/data/ratings.dat")
+val users  = sc.textFile("file:///home/cloudera/Desktop/data/users.dat")
+
+val rating1 = rating.map(a => a.split('::')).map(a => (a(1),1))
+
+val rating2 = rating1.reduceByKey((v1,v2) => (v1+v2)).map(a =>(a(1),a(0)).sortByKey(false).top(10)
+
+val movie1  = movies.map(a => a.split('::')).(a => (a(0),a(1))
+
+val joind_rdd = rating2.join(movie1)
+
+
+
+
+
+
+
