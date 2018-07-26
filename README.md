@@ -1,2 +1,2 @@
 # Hello-world
-Sample
+Sample code ive written
